@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8098B6D-6CB5-444B-9A3F-5BAD26D9B003}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Auction_Manager</RootNamespace>
+    <AssemblyName>Auction Manager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="auctiondbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>auctiondbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config.cs" />
+    <Compile Include="DBConnectAdmin.cs" />
+    <Compile Include="DBConnectAuction.cs" />
+    <Compile Include="DBConnectBuyers.cs" />
+    <Compile Include="DBConnectEmployee.cs" />
+    <Compile Include="DBConnectMySQL.cs" />
+    <Compile Include="DBConnectMySQLReports.cs" />
+    <Compile Include="DBConnectStock.cs" />
+    <Compile Include="DBConnectSuppliers.cs" />
+    <Compile Include="frmConSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConSettings.Designer.cs">
+      <DependentUpon>frmConSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeHomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeHomeScreen.Designer.cs">
+      <DependentUpon>frmEmployeeHomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminHomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminHomeScreen.Designer.cs">
+      <DependentUpon>frmAdminHomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuctionDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuctionDelete.Designer.cs">
+      <DependentUpon>frmAuctionDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuction_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuction_Add.Designer.cs">
+      <DependentUpon>frmAuction_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuction_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuction_Edit.Designer.cs">
+      <DependentUpon>frmAuction_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuction_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuction_View.Designer.cs">
+      <DependentUpon>frmAuction_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBidsFromBuyers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBidsFromBuyers.Designer.cs">
+      <DependentUpon>frmBidsFromBuyers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuyers_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuyers_Add.Designer.cs">
+      <DependentUpon>frmBuyers_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuyers_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuyers_Delete.Designer.cs">
+      <DependentUpon>frmBuyers_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuyers_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuyers_Edit.Designer.cs">
+      <DependentUpon>frmBuyers_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuyers_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuyers_View.Designer.cs">
+      <DependentUpon>frmBuyers_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployees_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployees_Add.Designer.cs">
+      <DependentUpon>frmEmployees_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployees_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployees_Delete.Designer.cs">
+      <DependentUpon>frmEmployees_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployees_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployees_Edit.Designer.cs">
+      <DependentUpon>frmEmployees_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployees_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployees_View.Designer.cs">
+      <DependentUpon>frmEmployees_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageAuctionsLanding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageAuctionsLanding.Designer.cs">
+      <DependentUpon>frmManageAuctionsLanding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageBuyersLanding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageBuyersLanding.Designer.cs">
+      <DependentUpon>frmManageBuyersLanding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageEmployeesLanding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageEmployeesLanding.Designer.cs">
+      <DependentUpon>frmManageEmployeesLanding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageStockLanding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageStockLanding.Designer.cs">
+      <DependentUpon>frmManageStockLanding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageSuppliersLanding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageSuppliersLanding.Designer.cs">
+      <DependentUpon>frmManageSuppliersLanding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock_Add.Designer.cs">
+      <DependentUpon>frmStock_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock_Delete.Designer.cs">
+      <DependentUpon>frmStock_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock_Edit.Designer.cs">
+      <DependentUpon>frmStock_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStock_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStock_View.Designer.cs">
+      <DependentUpon>frmStock_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuppliers_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuppliers_Add.Designer.cs">
+      <DependentUpon>frmSuppliers_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuppliers_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuppliers_Delete.Designer.cs">
+      <DependentUpon>frmSuppliers_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuppliers_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuppliers_View.Designer.cs">
+      <DependentUpon>frmSuppliers_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuppliers_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuppliers_Edit.Designer.cs">
+      <DependentUpon>frmSuppliers_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintPreview.Designer.cs">
+      <DependentUpon>PrintPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="bin\Debug\BuyersInvoice.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Auctions.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Buyers.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Employee.rdlc" />
+    <EmbeddedResource Include="frmConSettings.resx">
+      <DependentUpon>frmConSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeHomeScreen.resx">
+      <DependentUpon>frmEmployeeHomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminHomeScreen.resx">
+      <DependentUpon>frmAdminHomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuctionDelete.resx">
+      <DependentUpon>frmAuctionDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuction_Add.resx">
+      <DependentUpon>frmAuction_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuction_Edit.resx">
+      <DependentUpon>frmAuction_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuction_View.resx">
+      <DependentUpon>frmAuction_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBidsFromBuyers.resx">
+      <DependentUpon>frmBidsFromBuyers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuyers_Add.resx">
+      <DependentUpon>frmBuyers_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuyers_Delete.resx">
+      <DependentUpon>frmBuyers_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuyers_Edit.resx">
+      <DependentUpon>frmBuyers_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuyers_View.resx">
+      <DependentUpon>frmBuyers_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployees_Add.resx">
+      <DependentUpon>frmEmployees_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployees_Delete.resx">
+      <DependentUpon>frmEmployees_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployees_Edit.resx">
+      <DependentUpon>frmEmployees_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployees_View.resx">
+      <DependentUpon>frmEmployees_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageAuctionsLanding.resx">
+      <DependentUpon>frmManageAuctionsLanding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageBuyersLanding.resx">
+      <DependentUpon>frmManageBuyersLanding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageEmployeesLanding.resx">
+      <DependentUpon>frmManageEmployeesLanding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageStockLanding.resx">
+      <DependentUpon>frmManageStockLanding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageSuppliersLanding.resx">
+      <DependentUpon>frmManageSuppliersLanding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock_Add.resx">
+      <DependentUpon>frmStock_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock_Delete.resx">
+      <DependentUpon>frmStock_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock_Edit.resx">
+      <DependentUpon>frmStock_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStock_View.resx">
+      <DependentUpon>frmStock_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuppliers_Add.resx">
+      <DependentUpon>frmSuppliers_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuppliers_Delete.resx">
+      <DependentUpon>frmSuppliers_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuppliers_View.resx">
+      <DependentUpon>frmSuppliers_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuppliers_Edit.resx">
+      <DependentUpon>frmSuppliers_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintPreview.resx">
+      <DependentUpon>PrintPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Stock.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Suppliers.rdlc" />
+    <None Include="auctiondbDataSet.xsc">
+      <DependentUpon>auctiondbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="auctiondbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>auctiondbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="auctiondbDataSet.xss">
+      <DependentUpon>auctiondbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ConnectionConfig.txt" />
+    <Content Include="JMPPT.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ViewUnselected.png" />
+    <None Include="Resources\ViewSelected.png" />
+    <None Include="Resources\auction.png" />
+    <None Include="Resources\AddSelected.png" />
+    <None Include="Resources\AddUnselected.png" />
+    <None Include="Resources\AuctionUnselected.png" />
+    <None Include="Resources\AuctionSelected.png" />
+    <Content Include="Resources\Background2.png" />
+    <None Include="Resources\Background21.png" />
+    <Content Include="Resources\Background3.png" />
+    <None Include="Resources\Background31.png" />
+    <None Include="Resources\Unselected.png" />
+    <None Include="Resources\Buyers.png" />
+    <None Include="Resources\Buyers2.png" />
+    <None Include="Resources\Report.png" />
+    <None Include="Resources\Report2.png" />
+    <None Include="Resources\EditUnselected.png" />
+    <None Include="Resources\EditSelected.png" />
+    <None Include="Resources\DeleteSelected.png" />
+    <None Include="Resources\DeleteUnselected.png" />
+    <None Include="Resources\EmpSelected.PNG" />
+    <None Include="Resources\EmpUnselected.PNG" />
+    <Content Include="Resources\Selected.png" />
+    <None Include="Resources\Selected1.png" />
+    <None Include="Resources\SupplierUnselected.png" />
+    <None Include="Resources\SupplierSelected.png" />
+    <Content Include="Resources\Untitled.jpg" />
+    <None Include="Resources\Untitled1.jpg" />
+    <None Include="Resources\JMPPT.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
